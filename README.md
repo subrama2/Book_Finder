@@ -112,6 +112,9 @@ As a user checking out a book, The user should receive a reminder to go to a lib
 
 https://github.com/subrama2/Book_Finder
 
+## Scrum Board
+https://github.com/subrama2?tab=projects
+
 ## Weekly Meeting
 
 thursday at 7PM. Microsoft Teams Group
