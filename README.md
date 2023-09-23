@@ -10,120 +10,97 @@ Have you ever had trouble finding the book required for your coursework? Have yo
 -Send reminders to users to go and check out the books.
 -Find a book according to your interest and preferences.
 
+Use the web application to manage and create your book list. Send reminders to users that forget they wanted to checkout a book. keep track of favorite or preferred book.
 
 ## Storyboard
 
-![RentMinder](https://user-images.githubusercontent.com/112514952/214733059-0a0e8303-5f76-4973-9c1f-d5545adeb427.png)
-![RentMinderM](https://user-images.githubusercontent.com/112514952/221339203-5acefb93-560e-46a9-9ea4-8a95ceec3c6e.png)
-![RentMinderm2](https://user-images.githubusercontent.com/112514952/221339207-d63b1c5b-7daa-4b38-877a-de3d2f0a526f.png)
-
 ## Functional Requirements
 
-### Requirement 1: Record Monthly House Expenses
+### Requirement 1: Search Book
 
 #### Scenario
+As a user studying, i want to be able to search up the book that is required for my class.
 
-
-  
-#### Dependencies
-
-  
-#### Assumptions
-
-
-  
 #### Examples
 
 1.1
   
-**Given** 
+**Given** The book required for the class is Designing the user interface For beginners.
 
-**When**
+**When** I input Designing the user interface For beginners in the search bar
 
-**Then** 
+**Then**  I should be able to see the Designing the user interface For beginners books and similar books with titles similar to it
   
 1.2
   
-**Given** 
+**Given** The book required for the class is Crash Course for java.
 
-**When** 
+**When** I input Crash Course in the search bar
 
-**Then**   
+**Then**   I should be able to see all the Crash Courses text in the library database
   
 1.3
   
-**Given**
-**When** 
+**Given** The book required for the class is data structures.
 
-**Then**  
-  
+**When** I input data structures in the search bar
+
+**Then**   I should be able to see all the texts that have data structures titled
 1.4
   
-**Given** 
+**Given** The book required for the class is mystery adventure.
 
-**When** 
+**When** I input adventure in the search bar
 
-**Then** 
+**Then**   I should be able to see all the titles that are labled adventure.
  
 1.5
 
-**Given** 
+**Given** The book required for the class is machine learning
 
-**When** 
+**When** I input saefdsadsdfsadsfa
 
-**Then** 
+**Then**   I should see no titles
 
 ### Requirement 2: Send Reminders
 
 #### Scenario
-
-  
-#### Dependencies
-
-  
-#### Assumptions
-
-
+As a user checking out a book, The user should receive a reminder to go to a library and check the book out according to where its available
   
 #### Examples
 
 2.1
   
-**Given** 
+**Given** Designing the user interface For beginners has been selected to be checked out
 
-**When** 
+**When** i click the checkout button
 
-**Then** 
+**Then**  I should receive a reminder on where i can checkout the book,Designing the user interface For beginners , according to where its available.
   
 2.2 
   
-**Given** 
+**Given** data structures  has been selected to be checked out
 
-**When**   
+**When** i click the checkout button
 
-**Then**
+**Then**  I should receive a reminder on where i can checkout the book,data structures , according to where its available.
   
 2.3 
   
-**Given** 
+**Given** mystery adventure has been selected to be checked out.
 
-**When** 
+**When** i click the checkout button
 
-**Then** 
+**Then**   I should receive a reminder on where i can checkout the book,mystery adventure , according to where its available.
+  
   
 ## Class Diagram
-  
-![MicrosoftTeams-image](https://user-images.githubusercontent.com/112514952/214878074-7032179e-9e77-41a6-a2a8-211a16cd1ba9.png)
  
  ## Class Diagram Description
- 
- **MainActivity:**
- 
-**IHouseholdDAO:** 
 
-**IMemberDAO:** 
 
-**IPaymentDAO:** 
+ ## JSON Schema
+
 
 ## Scrum Roles
 
@@ -131,13 +108,17 @@ Have you ever had trouble finding the book required for your coursework? Have yo
 * Frontend Developer: Howard Hall, Srishant Burdhan
 * Integration Developer: Bidhatri Amatya
 
+## Github Repo link
+
+https://github.com/subrama2/Book_Finder
+
 ## Weekly Meeting
 
-Wednesday at 7PM. Microsoft Teams Group
+thursday at 7PM. Microsoft Teams Group
 
 Teams Meeting Link:
 
-https://teams.microsoft.com/_?lm=deeplink&lmsrc=NeutralHomePageWeb&cmpid=WebSignIn&culture=en-us&country=us#/conversations/19:edab28cd362646849e935d5670cf5e45@thread.v2?ctx=chat
-
+[https://teams.microsoft.com/_?lm=deeplink&lmsrc=NeutralHomePageWeb&cmpid=WebSignIn&culture=en-us&country=us#/conversations/19:edab28cd362646849e935d5670cf5e45@thread.v2?ctx=chat
+](https://teams.microsoft.com/_?lm=deeplink&lmsrc=NeutralHomePageWeb&cmpid=WebSignIn&culture=en-us&country=us#/school/conversations/Group%202?threadId=19:c648c66d20844dcdabba684b3c4b365f@thread.tacv2&ctx=channel)
 
 
