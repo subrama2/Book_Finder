@@ -4,6 +4,11 @@ Design Document
 Annamalai Subramanian,Howard Hall, Srishant Burdhan, Bidhatri Amatya
 
 ## Introduction
+Have you ever had trouble finding the book required for your coursework? Have you ever wanted to find the next popular book that is released? The Book Finder will help you:
+
+-Discover and locate the new and required books for you.
+-Send reminders to users to go and check out the books.
+-Find a book according to your interest and preferences.
 
 
 ## Storyboard
