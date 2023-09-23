@@ -1,7 +1,7 @@
 # Book_Finder
 Design Document  
   
-Annamalai Subramanian
+Annamalai Subramanian,Howard Hall, Srishant Burdhan, Bidhatri Amatya
 
 ## Introduction
 
@@ -122,9 +122,9 @@ Annamalai Subramanian
 
 ## Scrum Roles
 
-* DevOps/Product Owner/Scrum Master: 
-* Frontend Developer: 
-* Integration Developer:
+* DevOps/Product Owner/Scrum Master: Annamalai Subramanian
+* Frontend Developer: Howard Hall, Srishant Burdhan
+* Integration Developer: Bidhatri Amatya
 
 ## Weekly Meeting
 
