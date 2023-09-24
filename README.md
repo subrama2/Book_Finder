@@ -97,30 +97,30 @@ As a user checking out a book, The user should receive a reminder to go to a lib
 ## Class Diagram
  ![Class Diagram](https://github.com/subrama2/Book_Finder/blob/main/BookFinder%20Class%20Diagram.jpg)
  ## Class Diagram Description
-Person: Holds user specific information
--Name: Name of user
--Email Address: Email of user
--Student Number: Student's school specific identification number
--Reminders: Holds reminders set for each book
-+sendReminder: Checks for a time and sends a notification if time has exceeded the entry
-
-Book: Book specific information
--Title: Title of book
--Author: Author of the book
--Genre: Genre of the book
--Description: About the book's contents
--ISBN: Book identification code
--isInterested: Checked if a user checked out a book
-+setReminder: adds a title and time to the user's reminders
-
-Search: Stores search related information
--Filters: Sets appropriate filters for a given search query
--Results: Holds found results
--Pages: Total pages of results
-+retrieveBooks: Retrieves books based on search query
-+formatResults: Formats results based on retrieved data
-+checkout: Adds book to reminders list
-
+Person: Holds user specific information<br />
+-Name: Name of user<br />
+-Email Address: Email of user<br />
+-Student Number: Student's school specific identification number<br />
+-Reminders: Holds reminders set for each book<br />
++sendReminder: Checks for a time and sends a notification if time has exceeded the entry<br />
+<br />
+Book: Book specific information<br />
+-Title: Title of book<br />
+-Author: Author of the book<br />
+-Genre: Genre of the book<br />
+-Description: About the book's contents<br />
+-ISBN: Book identification code<br />
+-isInterested: Checked if a user checked out a book<br />
++setReminder: adds a title and time to the user's reminders<br />
+<br />
+Search: Stores search related information<br />
+-Filters: Sets appropriate filters for a given search query<br />
+-Results: Holds found results<br />
+-Pages: Total pages of results<br />
++retrieveBooks: Retrieves books based on search query<br />
++formatResults: Formats results based on retrieved data<br />
++checkout: Adds book to reminders list<br />
+<br />
  ## JSON Schema
 
 
