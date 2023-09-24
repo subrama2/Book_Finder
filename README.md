@@ -97,7 +97,29 @@ As a user checking out a book, The user should receive a reminder to go to a lib
 ## Class Diagram
  ![Class Diagram](https://github.com/subrama2/Book_Finder/blob/main/BookFinder%20Class%20Diagram.jpg)
  ## Class Diagram Description
+Person: Holds user specific information
+-Name: Name of user
+-Email Address: Email of user
+-Student Number: Student's school specific identification number
+-Reminders: Holds reminders set for each book
++sendReminder: Checks for a time and sends a notification if time has exceeded the entry
 
+Book: Book specific information
+-Title: Title of book
+-Author: Author of the book
+-Genre: Genre of the book
+-Description: About the book's contents
+-ISBN: Book identification code
+-isInterested: Checked if a user checked out a book
++setReminder: adds a title and time to the user's reminders
+
+Search: Stores search related information
+-Filters: Sets appropriate filters for a given search query
+-Results: Holds found results
+-Pages: Total pages of results
++retrieveBooks: Retrieves books based on search query
++formatResults: Formats results based on retrieved data
++checkout: Adds book to reminders list
 
  ## JSON Schema
 
