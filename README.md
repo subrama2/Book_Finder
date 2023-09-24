@@ -122,7 +122,29 @@ Search: Stores search related information<br />
 +checkout: Adds book to reminders list<br />
 <br />
  ## JSON Schema
-
+ ```
+{
+	"Person": {
+      "Name": "Name of user",
+      "Email Address": "Email of user",
+	  "Student Number": "Student school specific identification number",
+      "Reminders": "Holds reminders set for each book"
+    },
+     "Book": {
+      "Title": "Title of book",
+      "Email Address": "Author of book",
+	  "Student Number": "Genre of book",
+      "Reminders": "About the book contents",
+      "ISBN": "Book identification code",
+      "isInterested": "Check if user checked out a book"
+    },
+     "Search": {
+      "Filters": "Sets appropriate search filters for a given query",
+      "Results": "Holds found results",
+	  "Pages": "Total pages of results"
+    }   
+}
+```
 
 ## Scrum Roles
 
