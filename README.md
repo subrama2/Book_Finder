@@ -95,7 +95,7 @@ As a user checking out a book, The user should receive a reminder to go to a lib
   
   
 ## Class Diagram
- ![Class Diagram](https://github.com/subrama2/Book_Finder/blob/main/BookFinder%20Class%20Diagram.jpg)
+ ![Class Diagram](https://github.com/subrama2/Book_Finder/blob/main/BookFinder%20Class%20Diagram(1).jpg)
  ## Class Diagram Description
 Person: Holds user specific information<br />
 -Name: Name of user<br />
