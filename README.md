@@ -14,10 +14,10 @@ Use the web application to manage and create your book list. Send reminders to u
 
 ## Storyboard
 
-![Screen 1](https://github.com/subrama2/Book_Finder/assets/113551683/82cef6d9-7ce5-418b-ad30-3842d83cfb9c)
-![Screen 2](https://github.com/subrama2/Book_Finder/assets/113551683/b983d880-3312-4de4-bf35-329aa2cb61de)
-![Screen 3](https://github.com/subrama2/Book_Finder/assets/113551683/629669f6-219a-4e45-81f9-be99bb099436)
-![Screen 4](https://github.com/subrama2/Book_Finder/assets/113551683/40729d99-f1e5-439c-8a96-e920b51dfb48)
+![Screen 1](https://github.com/subrama2/Book_Finder/assets/113551683/b1ce89e7-3799-42c0-ba7a-a44ffa882c6f)
+![Screen 2](https://github.com/subrama2/Book_Finder/assets/113551683/15a7090b-f05e-4e39-bfad-914d75bffe06)
+![Screen 3](https://github.com/subrama2/Book_Finder/assets/113551683/ebbb7e3b-31dd-4882-94a2-f169444c4baa)
+![Screen 4](https://github.com/subrama2/Book_Finder/assets/113551683/611429fc-462a-4caf-bee4-67ce629021bc)
 
 ## Functional Requirements
 
