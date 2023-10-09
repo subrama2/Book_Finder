@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Book Finder</title>
 </head>
+
 <body>
-<h2>Plants are wonderful things!</h2>
+
+    <header>
+        <div id="title">
+            <h1>The Book Finder</h1>
+            <p>Your ultimate source for finding and managing books.</p>
+        </div>
+        <div id="search-bar">
+            <input type="text" id="book-search" placeholder="Search for a book...">
+            <button id="search-button">Search</button>
+        </div>
+    </header>
+
 <p th:text="${person}"/>
 
 <form action="#" th:action="@{/saveSpecimen}" th:object="${person}"
@@ -21,6 +34,9 @@
     <label>Specimen</label><input type="text" name="specimenId"
                                   th:field="*{SpecimenID}"/><br/>
     <button name="submit" type="submit" value="0">Submit</button>
+
 </form>
+
 </body>
+
 </html>
