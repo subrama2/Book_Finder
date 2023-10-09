@@ -6,9 +6,9 @@
 </head>
 <body>
 <h2>Plants are wonderful things!</h2>
-<p th:text="${specimen}"/>
+<p th:text="${person}"/>
 
-<form action="#" th:action="@{/saveSpecimen}" th:object="${specimen}"
+<form action="#" th:action="@{/saveSpecimen}" th:object="${person}"
       method="GET"><br/>
     <label>Latitude</label><input type="text" name="latitude"
                                   th:field="*{Latitude}"/><br/>

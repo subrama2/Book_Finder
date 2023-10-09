@@ -1,21 +1,22 @@
 package com.myplantdiary.enterprise.service;
 
-import com.myplantdiary.enterprise.dao.ISpecimenDAO;
-import com.myplantdiary.enterprise.dto.Specimen;
+import com.myplantdiary.enterprise.dao.IBookDAO;
+import com.myplantdiary.enterprise.dto.Book;
+import com.myplantdiary.enterprise.dto.Person;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SpecimenServiceStub implements ISpecimenService{
-    private ISpecimenDAO specimenDAO;
+    private IBookDAO bookDAO;
 
     public SpecimenServiceStub(){
 
     }
-    public SpecimenServiceStub(ISpecimenDAO specimenDAO){
+    public SpecimenServiceStub(IBookDAO bookDAO){
 
     }
-    public Specimen save(Specimen specimen){
-        return specimenDAO.save(specimen);
+    public Book save(Book book){
+        return bookDAO.save(book);
 
 
     }

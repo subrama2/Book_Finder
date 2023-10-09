@@ -1,6 +1,6 @@
 package com.myplantdiary.enterprise;
 
-import com.myplantdiary.enterprise.dto.Specimen;
+import com.myplantdiary.enterprise.dto.Person;
 import com.myplantdiary.enterprise.service.ISpecimenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,22 +20,22 @@ public class PlantDiaryController {
     @RequestMapping("/")
     public String Index(Model model)
     {
-        Specimen specimen = new Specimen();
-        specimen.setDescription("Pawpaw fruit season");
-        specimen.setLatitude("39.74");
-        specimen.setLongitude("-84.51");
-        specimen.setSpecimenID("1003");
-        specimen.setPlantID(84);
-        model.addAttribute(specimen);
+        Person person = new Person();
+        person.setDescription("Pawpaw fruit season");
+        person.setLatitude("39.74");
+        person.setLongitude("-84.51");
+        person.setSpecimenID("1003");
+        person.setPlantID(84);
+        model.addAttribute(person);
         return "start";
     }
 
     @RequestMapping("/saveSpecimen")
-    public String saveSpecimen(Specimen specimen)
+    public String saveSpecimen(Person person)
     {
         try
         {
-            specimenService.save(specimen);
+            specimenService.save(person);
         }
         catch (Exception e)
         {
@@ -65,9 +65,9 @@ public class PlantDiaryController {
      * Endpoint to create specimen
      */
 @PostMapping(value = "/specimen", consumes = "application/json", produces = "application/json")
-    public Specimen createSpecimen(@RequestBody Specimen specimen)
+    public Person createSpecimen(@RequestBody Person person)
     {
-        return specimen;
+        return person;
     }
 
     /**
