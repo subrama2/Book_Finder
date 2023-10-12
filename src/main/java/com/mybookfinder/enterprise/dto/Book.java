@@ -1,4 +1,4 @@
-package com.myplantdiary.enterprise.dto;
+package com.mybookfinder.enterprise.dto;
 
 import lombok.Data;
 

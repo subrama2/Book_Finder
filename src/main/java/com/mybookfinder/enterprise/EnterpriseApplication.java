@@ -1,4 +1,4 @@
-package com.myplantdiary.enterprise;
+package com.mybookfinder.enterprise;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
