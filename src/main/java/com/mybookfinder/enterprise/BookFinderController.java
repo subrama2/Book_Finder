@@ -1,9 +1,7 @@
 package com.mybookfinder.enterprise;
 
 import com.mybookfinder.enterprise.dto.Book;
-import com.mybookfinder.enterprise.dto.Person;
-import com.mybookfinder.enterprise.service.IPersonService;
-import com.mybookfinder.enterprise.service.IPersonService;
+import com.mybookfinder.enterprise.service.IBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,22 +11,32 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class BookFinderController {
+    @Autowired
+    IBookService bookService;
+
+
     /**
      * Handles the root (/) endpoint and return a start page
      * @return
      */
-    @Autowired
-    IPersonService bookService;
+
+
     @RequestMapping("/")
     public String Index(Model model)
     {
-        Person book = new Person();
+        Book book = new Book();
+        book.setAuthor("mr.seuss");
+        book.setDescription("test2");
+        book.setGenre("comedy");
+        book.setIsbn("1243522");
+        book.setInterested(true);
+        book.setTitle("Fake Title");
         model.addAttribute(book);
         return "start";
     }
 
     @RequestMapping("/saveBook")
-    public String saveBook(Person book)
+    public String saveBook(Book book)
     {
         try
         {
@@ -47,6 +55,7 @@ public class BookFinderController {
     @GetMapping("/book")
     public ResponseEntity fetchAllBooks()
     {
+
         return new ResponseEntity(HttpStatus.OK);
     }
     /**
@@ -88,11 +97,11 @@ public class BookFinderController {
     /**
      * Endpoint to fetch list of books marked as "interested" by user
      */
-    @GetMapping("/book/{isbn}/")
-    public ResponseEntity fetchBookByInterest(@PathVariable("interest") String interest)
-    {
-        return new ResponseEntity(HttpStatus.OK);
-    }
+    // @GetMapping("/book/{isbn}/")
+    //public ResponseEntity fetchBookByInterest(@PathVariable("interest") String interest)
+    //{
+     //   return new ResponseEntity(HttpStatus.OK);
+  //  }
 
     /**
      * Endpoint to create book
