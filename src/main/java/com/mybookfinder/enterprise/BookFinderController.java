@@ -25,6 +25,7 @@ public class BookFinderController {
     public String Index(Model model)
     {
         Book book = new Book();
+        book.setBookId(63);
         book.setAuthor("mr.seuss");
         book.setDescription("test2");
         book.setGenre("comedy");
