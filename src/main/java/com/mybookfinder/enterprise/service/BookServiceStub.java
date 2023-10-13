@@ -13,7 +13,7 @@ public class BookServiceStub implements IBookService {
     public BookServiceStub(IBookDAO bookDAO){
 
     }
-    public Book save(Book book){
+    public Book save(Book book) throws Exception {
         return bookDAO.save(book);
 
 
