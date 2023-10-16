@@ -24,7 +24,9 @@ public class BookFinderController {
     @RequestMapping("/")
     public String Index(Model model)
     {
+
         Book book = new Book();
+        book.setPubDate("10/10/2010");
         book.setAuthor("mr.seuss");
         book.setDescription("test2");
         book.setGenre("comedy");
@@ -90,6 +92,16 @@ public class BookFinderController {
      */
     @GetMapping("/book/{isbn}/")
     public ResponseEntity fetchBookByISBN(@PathVariable("isbn") String isbn)
+    {
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
+    /**
+     * Endpoint to find book via publish date
+     *
+     */
+    @GetMapping("/book/{pubDate}/")
+    public ResponseEntity fetchBookByPubDate(@PathVariable("pubDate") String pubDate)
     {
         return new ResponseEntity(HttpStatus.OK);
     }

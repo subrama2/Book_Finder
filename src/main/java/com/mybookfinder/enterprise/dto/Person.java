@@ -10,3 +10,4 @@ public @Data class Person {
         private int studentNumber;
         private List<String> reminders;
     }
+
