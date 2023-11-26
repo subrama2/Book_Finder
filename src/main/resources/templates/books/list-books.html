@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+    <title>Books</title>
+</head>
+<body>
+<div class="container">
+    <h4>Books Available</h4>
+    <hr>
+    <!--
+    Create a button to add a new Book
+    -->
+    <a th:href="@{/books/viewAddForm}" class="btn btn-dark btn-sm mb-2">Add New Book Here</a>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr class="bg-danger">
+            <th>Book Title</th>
+            <th>Book Author</th>
+            <th>Book Genre</th>
+            <th>Book Description</th>
+            <th>Book ISBN</th>
+            <th>Update Info</th>
+        </tr>
+        </thead>
+
+
+        <tbody>
+        <tr th:each="theBooks : ${books}">
+            <td th:text="${theBooks.title}"/>
+            <td th:text="${theBooks.author}"/>
+            <td th:text="${theBooks.genre}"/>
+            <td th:text="${theBooks.description}"/>
+            <td th:text="${theBooks.ISBN}"/>
+
+            <!--Update Button-->
+            <td>
+                <a th:href="@{/Books/viewUpdateForm(bookId=${theBooks.id})}"
+                   class="btn btn-danger btn-sm">Update</a>
+
+
+                <!--Delete Button-->
+                <a th:href="@{/Books/delete(bookId=${theBooks.id})}"
+                   class="btn btn-danger btn-sm"onclick="if (!(confirm('To confirm Deletion, please click Delete; otherwise click Cancel')))return false">Delete</a>
+
+            </td>
+
+        </tr>
+        </tbody>
+
+
+    </table>
+</div>
+
+
+</body>
+</html>

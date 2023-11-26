@@ -1,124 +1,89 @@
 package com.mybookfinder.enterprise;
 
-import com.mybookfinder.enterprise.dto.Book;
+import com.mybookfinder.enterprise.entity.Book;
 import com.mybookfinder.enterprise.service.IBookService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
+@RequestMapping("/Books")
 public class BookFinderController {
-    @Autowired
-    IBookService bookService;
+    public IBookService bookService;
 
-
-    /**
-     * Handles the root (/) endpoint and return a start page
-     * @return
-     */
-
-
-    @RequestMapping("/")
-    public String Index(Model model)
+    public BookFinderController(IBookService theBookService)
     {
-        Book book = new Book();
-        book.setAuthor("mr.seuss");
-        book.setDescription("test2");
-        book.setGenre("comedy");
-        book.setIsbn("1243522");
-        book.setInterested(true);
-        book.setTitle("Fake Title");
-        model.addAttribute(book);
-        return "start";
+        bookService = theBookService;
     }
 
-    @RequestMapping("/saveBook")
-    public String saveBook(Book book)
-    {
-        try
-        {
-            bookService.save(book);
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-            return "start";
-        }
-        return "start";
-    }
-    /**
-     * Endpoint to fetch specimens
-     */
-    @GetMapping("/book")
-    public ResponseEntity fetchAllBooks()
-    {
+    //Upload Book info
+    //private List<Book> Book;
 
-        return new ResponseEntity(HttpStatus.OK);
-    }
-    /**
-     * Endpoint to fetch book by Title
-     */
-    @GetMapping("/book/{title}/")
-    public ResponseEntity fetchBookById(@PathVariable("title") String title)
-    {
-        return new ResponseEntity(HttpStatus.OK);
+
+    //Mapping for "/list"
+    @GetMapping("/list")
+    public String listBooks(Model theModel) {
+        //Retrieve Books from the Database
+        List<Book> theBooks = bookService.findAll();
+
+        //Add Books to the Spring Model
+        theModel.addAttribute("books", theBooks);
+
+        return "books/list-books";
+
+
     }
 
-    /**
-     * Endpoint to fetch book by Author
-     */
-    @GetMapping("/book/{author}/")
-    public ResponseEntity fetchBookByAuthor(@PathVariable("author") String author)
-    {
-        return new ResponseEntity(HttpStatus.OK);
+    @GetMapping("/viewAddForm")
+    public String viewAddForm(Model theModel) {
+
+        //Model attribute for the data binding
+        Book theBook = new Book();
+
+
+        theModel.addAttribute("book", theBook);
+
+        return "books/book-form";
+    }
+    @GetMapping("/viewUpdateForm")
+    public String viewUpdateForm(@RequestParam("bookId") int theId, Model theModel){
+
+        //Retrieve the Book info from the service layer
+        Book theBook = bookService.findById(theId);
+
+
+        //Pre-populate the form by setting the Book as a model attribute
+        theModel.addAttribute("book", theBook);
+
+        //Redirect us to the Books form
+        return "books/book-form";
     }
 
-    /**
-     * Endpoint to fetch book by Genre
-     */
-    @GetMapping("/book/{genre}/")
-    public ResponseEntity fetchBookByGenre(@PathVariable("genre") String genre)
-    {
-        return new ResponseEntity(HttpStatus.OK);
+
+    @PostMapping("/save")
+    public String saveBook(@ModelAttribute("book") Book theBook){
+
+        //Register the Book
+        bookService.save(theBook);
+
+        //Block duplicate submission for accidental refresh
+        return "redirect:/Books/list";
     }
 
-    /**
-     * Endpoint to fetch book by ISBN
-     */
-    @GetMapping("/book/{isbn}/")
-    public ResponseEntity fetchBookByISBN(@PathVariable("isbn") String isbn)
-    {
-        return new ResponseEntity(HttpStatus.OK);
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam("bookId") int theId){
+
+        //Delete Book
+        bookService.deleteById(theId);
+
+        //Return to the Books directory
+        return "redirect:/Books/list";
+
     }
 
-    /**
-     * Endpoint to fetch list of books marked as "interested" by user
-     */
-    // @GetMapping("/book/{isbn}/")
-    //public ResponseEntity fetchBookByInterest(@PathVariable("interest") String interest)
-    //{
-     //   return new ResponseEntity(HttpStatus.OK);
-  //  }
-
-    /**
-     * Endpoint to create book
-     */
-@PostMapping(value = "/book", consumes = "application/json", produces = "application/json")
-    public Book createBook(@RequestBody Book book)
-    {
-        return book;
-    }
-
-    /**
-     * Endpoint to delete book by ID
-     */
-@DeleteMapping("/book/{title}")
-    public ResponseEntity deleteBook(@PathVariable("title") String title)
-    {
-        return new ResponseEntity(HttpStatus.OK);
-    }
 
 }
+
