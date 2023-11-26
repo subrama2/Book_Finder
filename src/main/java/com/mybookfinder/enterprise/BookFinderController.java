@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import com.mybookfinder.enterprise.service.IUserService;
 
 @Controller
 public class BookFinderController {
@@ -21,7 +22,7 @@ public class BookFinderController {
      */
 
 
-    @RequestMapping("/")
+    @RequestMapping("/home")
     public String Index(Model model)
     {
         Book book = new Book();
@@ -106,19 +107,43 @@ public class BookFinderController {
     /**
      * Endpoint to create book
      */
-@PostMapping(value = "/book", consumes = "application/json", produces = "application/json")
-    public Book createBook(@RequestBody Book book)
-    {
-        return book;
+    @PostMapping(value = "/book", consumes = "application/json", produces = "application/json")
+        public Book createBook(@RequestBody Book book)
+        {
+            return book;
+        }
+
+        /**
+         * Endpoint to delete book by ID
+         */
+    @DeleteMapping("/book/{title}")
+        public ResponseEntity deleteBook(@PathVariable("title") String title)
+        {
+            return new ResponseEntity(HttpStatus.OK);
+        }
+
+    @Autowired
+    IUserService userService;
+    @GetMapping("/login")
+    public String showLoginForm() {
+        return "login";
     }
 
-    /**
-     * Endpoint to delete book by ID
-     */
-@DeleteMapping("/book/{title}")
-    public ResponseEntity deleteBook(@PathVariable("title") String title)
-    {
-        return new ResponseEntity(HttpStatus.OK);
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String showLoginPage() {
+        return "login"; // Return the login view when the root URL is accessed
+
+    }
+    @PostMapping("/login")
+    public String login(@RequestParam("username") String username,
+                        @RequestParam("password") String password, Model model) {
+        boolean authenticated = userService.authenticate(username, password);
+        if (authenticated) {
+            return "redirect:/home";
+        } else {
+            model.addAttribute("error", "Invalid credentials");
+            return "login";
+        }
     }
 
 }
