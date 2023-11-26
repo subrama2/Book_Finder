@@ -25,6 +25,7 @@ public class BookFinderController {
     public String Index(Model model)
     {
         Book book = new Book();
+        book.setBookId(63);
         book.setAuthor("mr.seuss");
         book.setDescription("test2");
         book.setGenre("comedy");
@@ -50,7 +51,7 @@ public class BookFinderController {
         return "start";
     }
     /**
-     * Endpoint to fetch specimens
+     * Endpoint to fetch all books
      */
     @GetMapping("/book")
     public ResponseEntity fetchAllBooks()
@@ -59,10 +60,18 @@ public class BookFinderController {
         return new ResponseEntity(HttpStatus.OK);
     }
     /**
+     * Endpoint to fetch book by ID
+     */
+    @GetMapping("/book/{id}/")
+    public ResponseEntity fetchBookById(@PathVariable("id") String id)
+    {
+        return new ResponseEntity(HttpStatus.OK);
+    }
+    /**
      * Endpoint to fetch book by Title
      */
     @GetMapping("/book/{title}/")
-    public ResponseEntity fetchBookById(@PathVariable("title") String title)
+    public ResponseEntity fetchBookByTitle(@PathVariable("title") String title)
     {
         return new ResponseEntity(HttpStatus.OK);
     }
@@ -115,8 +124,8 @@ public class BookFinderController {
     /**
      * Endpoint to delete book by ID
      */
-@DeleteMapping("/book/{title}")
-    public ResponseEntity deleteBook(@PathVariable("title") String title)
+@DeleteMapping("/book/{id}/")
+    public ResponseEntity deleteBook(@PathVariable("id") String id)
     {
         return new ResponseEntity(HttpStatus.OK);
     }

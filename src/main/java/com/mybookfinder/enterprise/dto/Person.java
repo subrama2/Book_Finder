@@ -5,8 +5,9 @@ import lombok.Data;
 import java.util.List;
 
 public @Data class Person {
-        private String name;
-        private String emailAddress;
-        private int studentNumber;
-        private List<String> reminders;
-    }
+    private int personId;
+    private String name;
+    private String emailAddress;
+    private int studentNumber;
+    private List<String> reminders;
+}
