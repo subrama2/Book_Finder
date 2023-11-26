@@ -9,95 +9,95 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
-    private int ID;
+    @Column(name = "id")
+    private int id;
 
-    @Column(name = "Title")
-    private String Title;
+    @Column(name = "title")
+    private String title;
 
-    @Column(name = "Author")
-    private String Author;
+    @Column(name = "author")
+    private String author;
 
-    @Column(name = "Genre")
-    private String Genre;
+    @Column(name = "genre")
+    private String genre;
 
-    @Column(name = "Description")
-    private String Description;
+    @Column(name = "description")
+    private String description;
 
-    @Column(name = "ISBN")
-    private String ISBN;
+    @Column(name = "isbn")
+    private String isbn;
 
     //set the constructors
     public Book(){
 
     }
 
-    public Book(int id, String title, String author, String genre, String description, String ISBN) {
-        this.ID = id;
-        this.Title = title;
-        this.Author = author;
-        this.Genre = genre;
-        this.Description = description;
-        this.ISBN = ISBN;
+    public Book(int id, String title, String author, String genre, String description, String isbn) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
+        this.description = description;
+        this.isbn = isbn;
     }
 
     public int getId() {
-        return ID;
+        return id;
     }
 
     public void setId(int id) {
-        this.ID = id;
+        this.id = id;
     }
 
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public void setTitle(String title) {
-        Title = title;
+        this.title = title;
     }
 
     public String getAuthor() {
-        return Author;
+        return author;
     }
 
     public void setAuthor(String author) {
-        Author = author;
+        this.author = author;
     }
 
     public String getGenre() {
-        return Genre;
+        return genre;
     }
 
     public void setGenre(String genre) {
-        Genre = genre;
+        this.genre = genre;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 
-    public String getISBN() {
-        return ISBN;
+    public String getIsbn() {
+        return isbn;
     }
 
-    public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
+    public void setIsbn(String ISBN) {
+        this.isbn = ISBN;
     }
 
     @Override
     public String toString() {
         return "Book{" +
-                "id=" + ID +
-                ", Title='" + Title + '\'' +
-                ", Author='" + Author + '\'' +
-                ", Genre='" + Genre + '\'' +
-                ", Description='" + Description + '\'' +
-                ", ISBN='" + ISBN + '\'' +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", genre='" + genre + '\'' +
+                ", description='" + description + '\'' +
+                ", isbn='" + isbn + '\'' +
                 '}';
     }
 }

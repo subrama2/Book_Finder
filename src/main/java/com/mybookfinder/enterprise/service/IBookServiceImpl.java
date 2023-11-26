@@ -19,7 +19,7 @@ public class IBookServiceImpl implements IBookService {
 
     @Override
     public List<Book> findAll() {
-        return bookRepository.findAllByOrderByBookName();
+        return bookRepository.findAllByOrderByTitleAsc();
     }
 
     @Override

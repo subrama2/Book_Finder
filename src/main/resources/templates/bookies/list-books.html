@@ -20,7 +20,7 @@
     <!--
     Create a button to add a new Book
     -->
-    <a th:href="@{/books/viewAddForm}" class="btn btn-dark btn-sm mb-2">Add New Book Here</a>
+    <a th:href="@{/Books/viewAddForm}" class="btn btn-dark btn-sm mb-2">Add New Book Here</a>
 
     <table class="table table-bordered">
         <thead>
@@ -36,12 +36,12 @@
 
 
         <tbody>
-        <tr th:each="theBooks : ${books}">
+        <tr th:each="theBooks : ${bookies}">
             <td th:text="${theBooks.title}"/>
             <td th:text="${theBooks.author}"/>
             <td th:text="${theBooks.genre}"/>
             <td th:text="${theBooks.description}"/>
-            <td th:text="${theBooks.ISBN}"/>
+            <td th:text="${theBooks.isbn}"/>
 
             <!--Update Button-->
             <td>

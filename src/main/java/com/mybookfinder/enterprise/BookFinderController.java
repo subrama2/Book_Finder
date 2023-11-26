@@ -13,8 +13,8 @@ import java.util.List;
 public class BookFinderController {
     public IBookService bookService;
 
-    public BookFinderController(IBookService theBookService)
-    {
+    public BookFinderController(IBookService theBookService) {
+
         bookService = theBookService;
     }
 
@@ -29,9 +29,9 @@ public class BookFinderController {
         List<Book> theBooks = bookService.findAll();
 
         //Add Books to the Spring Model
-        theModel.addAttribute("books", theBooks);
+        theModel.addAttribute("bookies", theBooks);
 
-        return "books/list-books";
+        return "bookies/list-books";
 
 
     }
@@ -43,9 +43,9 @@ public class BookFinderController {
         Book theBook = new Book();
 
 
-        theModel.addAttribute("book", theBook);
+        theModel.addAttribute("books", theBook);
 
-        return "books/book-form";
+        return "bookies/book-form";
     }
     @GetMapping("/viewUpdateForm")
     public String viewUpdateForm(@RequestParam("bookId") int theId, Model theModel){
@@ -55,10 +55,10 @@ public class BookFinderController {
 
 
         //Pre-populate the form by setting the Book as a model attribute
-        theModel.addAttribute("book", theBook);
+        theModel.addAttribute("books", theBook);
 
         //Redirect us to the Books form
-        return "books/book-form";
+        return "bookies/book-form";
     }
 
 
