@@ -11,11 +11,17 @@ import java.util.List;
 @Controller
 @RequestMapping("/Books")
 public class BookFinderController {
+
     public IBookService bookService;
 
     public BookFinderController(IBookService theBookService) {
-
         bookService = theBookService;
+    }
+    @GetMapping("/start")
+    public String start(Model theModel) {
+        return "bookies/start";
+
+
     }
 
     //Upload Book info
