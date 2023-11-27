@@ -111,7 +111,7 @@ Our Book Finder application has recently undergone significant enhancements. The
 
     Home Page with Prepopulated Books:
         The home page is dynamically populated with a selection of books.
-        Featured books, new arrivals, and popular titles are highlighted to engage users upon their visit.
+        Featured books, and popular titles are highlighted to engage users upon their visit.
 
     Results Page for Book Display:
         A dedicated results page showcases books based on the user's search query.
