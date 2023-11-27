@@ -1,7 +1,7 @@
 # Book_Finder
 Design Document  
   
-Annamalai Subramanian,Howard Hall, Srishant Burdhan, Bidhatri Amatya
+Annamalai Subramanian, Howard Hall, Srishant Burdhan, Bidhatri Amatya
 
 ## Introduction
 Have you ever had trouble finding the book required for your coursework? Have you ever wanted to find the next popular book that is released? The Book Finder will help you:
@@ -111,7 +111,7 @@ Our Book Finder application has recently undergone significant enhancements. The
 
     Home Page with Prepopulated Books:
         The home page is dynamically populated with a selection of books.
-        Featured books, and popular titles are highlighted to engage users upon their visit.
+        Featured books and popular titles are highlighted to engage users upon their visit.
 
     Results Page for Book Display:
         A dedicated results page showcases books based on the user's search query.
@@ -123,7 +123,7 @@ Our Book Finder application has recently undergone significant enhancements. The
 
     Login Page:
         A secure login page has been established for user authentication.
-        This feature allows users to create accounts, sign in, and manage their personal profiles.
+        This feature allows users to create accounts and sign in.
   
 ## Class Diagram
  ![Class Diagram](https://github.com/subrama2/Book_Finder/blob/main/BookFinder%20Class%20Diagram%20(1).jpg)
