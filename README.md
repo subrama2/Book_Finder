@@ -97,7 +97,33 @@ As a user checking out a book, The user should receive a reminder to go to a lib
 **When** i click the checkout button
 
 **Then**   I should receive a reminder on where i can checkout the book,mystery adventure , according to where its available.
-  
+
+## Current Website Functionality
+Our Book Finder application has recently undergone significant enhancements. The current state of the application includes the following functionalities:
+
+    Functional Database:
+        A fully functional database is now integrated with the application.
+        The database stores comprehensive information about various books.
+
+    Book Search Capability:
+        Users can search for books using the search function, which queries the database for relevant results.
+        The search feature is robust, allowing users to find books based on titles, authors, genres, and other keywords.
+
+    Home Page with Prepopulated Books:
+        The home page is dynamically populated with a selection of books.
+        Featured books, new arrivals, and popular titles are highlighted to engage users upon their visit.
+
+    Results Page for Book Display:
+        A dedicated results page showcases books based on the user's search query.
+        This page displays book information such as titles, authors, cover images, and brief descriptions.
+
+    Autocomplete Functionality Site-Wide:
+        Autocomplete has been implemented to enhance the user experience during searches.
+        This feature suggests possible book titles or authors as the user types, making the search process more efficient.
+
+    Login Page:
+        A secure login page has been established for user authentication.
+        This feature allows users to create accounts, sign in, and manage their personal profiles.
   
 ## Class Diagram
  ![Class Diagram](https://github.com/subrama2/Book_Finder/blob/main/BookFinder%20Class%20Diagram%20(1).jpg)
