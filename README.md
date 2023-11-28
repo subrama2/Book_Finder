@@ -110,7 +110,6 @@ Book: Book specific information<br />
 Search: Stores search related information<br />
 -Filters: Sets appropriate filters for a given search query<br />
 -Results: Holds found results<br />
--Pages: Total pages of results<br />
 +retrieveBooks: Retrieves books based on search query<br />
 +formatResults: Formats results based on retrieved data<br />
 +checkout: Adds book to reminders list<br />
@@ -128,7 +127,6 @@ Search: Stores search related information<br />
      "Title": "Title of book",
      "Email Address": "Author of book",
      "Student Number": "Genre of book",
-     "Reminders": "About the book contents",
      "ISBN": "Book identification code"
    },
     "Search": {
