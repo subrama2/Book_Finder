@@ -115,27 +115,29 @@ Search: Stores search related information<br />
 +formatResults: Formats results based on retrieved data<br />
 +checkout: Adds book to reminders list<br />
 <br />
- ## JSON Schema
- ```
+
+## JSON Schema
+```
 {
-	"Person": {
-      "Name": "Name of user",
-      "Email Address": "Email of user",
-	  "Student Number": "Student school specific identification number",
-      
-    },
-     "Book": {
-      "Title": "Title of book",
-      "Email Address": "Author of book",
-	  "Student Number": "Genre of book",
-      "ISBN": "Book identification code",
-    },
-     "Search": {
-      "Filters": "Sets appropriate search filters for a given query",
-      "Results": "Holds found results",
-    }   
+   "Person": {
+     "Name": "Name of user",
+     "Email Address": "Email of user",
+     "Student Number": "Student school specific identification number"
+   },
+    "Book": {
+     "Title": "Title of book",
+     "Email Address": "Author of book",
+     "Student Number": "Genre of book",
+     "Reminders": "About the book contents",
+     "ISBN": "Book identification code"
+   },
+    "Search": {
+     "Filters": "Sets appropriate search filters for a given query",
+     "Results": "Holds found results"
+   }   
 }
 ```
+
 
 ## Scrum Roles
 
