@@ -22,6 +22,10 @@ public class IBookServiceImpl implements IBookService {
         return bookRepository.findAllByOrderByTitleAsc();
     }
 
+    public List<Book> search(String theSearch)
+    {
+        return bookRepository.findAllByTitleContainsIgnoreCaseOrAuthorContainsIgnoreCaseOrDescriptionContainsIgnoreCaseOrGenreContainsIgnoreCase(theSearch,theSearch,theSearch,theSearch);
+    }
     @Override
     public Book findById(int theId) {
         return bookRepository.findById(theId).get();

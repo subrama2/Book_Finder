@@ -1,7 +1,10 @@
 package com.mybookfinder.enterprise;
 
+import com.mybookfinder.enterprise.dto.Person;
 import com.mybookfinder.enterprise.entity.Book;
 import com.mybookfinder.enterprise.service.IBookService;
+import com.mybookfinder.enterprise.service.IUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -39,6 +42,14 @@ public class BookFinderController {
 
         return "bookies/list-books";
 
+
+    }
+
+    @GetMapping("/search")
+    public String searchBooks(@RequestParam("searchQuery") String theSearch, Model theModel){
+        List<Book> theBooks = bookService.search(theSearch);
+        theModel.addAttribute("bookies",theBooks);
+        return "bookies/list-books";
 
     }
 
@@ -87,6 +98,37 @@ public class BookFinderController {
 
         //Return to the Books directory
         return "redirect:/Books/list";
+
+    }
+    @Autowired
+    IUserService userService;
+    @GetMapping("/login")
+    public String showLoginForm() {
+        return "bookies/login";
+    }
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String showLoginPage() {
+        return "bookies/login"; // Return the login view when the root URL is accessed
+    }
+    @PostMapping("/login")
+    public String login(@RequestParam("username") String username,
+                        @RequestParam("password") String password, Model model) {
+        boolean authenticated = userService.authenticate(username, password);
+        if (authenticated) {
+            return "/bookies/start";
+        } else {
+            model.addAttribute("error", "Invalid credentials");
+            return "bookies/login";
+        }
+    }
+    @PostMapping("/createAccount")
+    public String createAccount(@RequestParam("username") String username,
+                                @RequestParam("password") String password,
+                                Model model) {
+        Person newUser = new Person();
+        newUser.setUsername(username);
+        newUser.setPassword(password);
+        return "bookies/login";
 
     }
 
