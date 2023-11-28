@@ -7,10 +7,9 @@ Annamalai Subramanian, Howard Hall, Srishant Burdhan, Bidhatri Amatya
 Have you ever had trouble finding the book required for your coursework? Have you ever wanted to find the next popular book that is released? The Book Finder will help you:
 
 -Discover and locate the new and required books for you.
--Send reminders to users to go and check out the books.
 -Find a book according to your interest and preferences.
 
-Use the web application to manage and create your book list. Send reminders to users that forget they wanted to checkout a book. keep track of favorite or preferred book.
+Use the web application to manage and create your book list. keep track of favorite or preferred book.
 
 ## Storyboard
 
@@ -67,37 +66,6 @@ As a user studying, i want to be able to search up the book that is required for
 
 **Then**   I should see no titles
 
-### Requirement 2: Send Reminders
-
-#### Scenario
-As a user checking out a book, The user should receive a reminder to go to a library and check the book out according to where its available
-  
-#### Examples
-
-2.1
-  
-**Given** Designing the user interface For beginners has been selected to be checked out
-
-**When** i click the checkout button
-
-**Then**  I should receive a reminder on where i can checkout the book,Designing the user interface For beginners , according to where its available.
-  
-2.2 
-  
-**Given** data structures  has been selected to be checked out
-
-**When** i click the checkout button
-
-**Then**  I should receive a reminder on where i can checkout the book,data structures , according to where its available.
-  
-2.3 
-  
-**Given** mystery adventure has been selected to be checked out.
-
-**When** i click the checkout button
-
-**Then**   I should receive a reminder on where i can checkout the book,mystery adventure , according to where its available.
-
 ## Current Website Functionality
 Our Book Finder application has recently undergone significant enhancements. The current state of the application includes the following functionalities:
 
@@ -122,9 +90,7 @@ Our Book Finder application has recently undergone significant enhancements. The
         This feature suggests possible book titles or authors as the user types, making the search process more efficient.
 
     Login Page:
-        A secure login page has been established for user authentication.
-        This feature allows users to create accounts and sign in.
-  
+        A secure login page has been established for user authentication.  
 ## Class Diagram
  ![Class Diagram](https://github.com/subrama2/Book_Finder/blob/main/BookFinder%20Class%20Diagram%20(1).jpg)
  ## Class Diagram Description
@@ -132,8 +98,7 @@ Person: Holds user specific information<br />
 -Name: Name of user<br />
 -Email Address: Email of user<br />
 -Student Number: Student's school specific identification number<br />
--Reminders: Holds reminders set for each book<br />
-+sendReminder: Checks for a time and sends a notification if time has exceeded the entry<br />
+
 <br />
 Book: Book specific information<br />
 -Title: Title of book<br />
@@ -141,8 +106,6 @@ Book: Book specific information<br />
 -Genre: Genre of the book<br />
 -Description: About the book's contents<br />
 -ISBN: Book identification code<br />
--isInterested: Checked if a user checked out a book<br />
-+setReminder: adds a title and time to the user's reminders<br />
 <br />
 Search: Stores search related information<br />
 -Filters: Sets appropriate filters for a given search query<br />
@@ -159,20 +122,17 @@ Search: Stores search related information<br />
       "Name": "Name of user",
       "Email Address": "Email of user",
 	  "Student Number": "Student school specific identification number",
-      "Reminders": "Holds reminders set for each book"
+      
     },
      "Book": {
       "Title": "Title of book",
       "Email Address": "Author of book",
 	  "Student Number": "Genre of book",
-      "Reminders": "About the book contents",
       "ISBN": "Book identification code",
-      "isInterested": "Check if user checked out a book"
     },
      "Search": {
       "Filters": "Sets appropriate search filters for a given query",
       "Results": "Holds found results",
-	  "Pages": "Total pages of results"
     }   
 }
 ```
